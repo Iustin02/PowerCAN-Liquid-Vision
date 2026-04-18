@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0190CCFA7AE6A0D42BF24297 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB8316C01F91CD9491D82D /* HistoryView.swift */; };
+		026C0B22ED2967D3557638BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F2AAD7C0528697BFAEF63 /* ContentView.swift */; };
+		02A9E956C0F8E33BC5E8C024 /* OBDData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C3B26024DF4A53F05494 /* OBDData.swift */; };
+		05C2BC35A313AA3B7FFCA2D8 /* ArcGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D13E9BF153144B77F3AE21 /* ArcGaugeView.swift */; };
+		0BFAF7D7E9F16B3E8A1872CF /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9EB4D6FED7D5814E8A0D92 /* DataProvider.swift */; };
+		136F30A4C06B65F59B7105AB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1FA4EC054D4DC7D0A559E3 /* LocationManager.swift */; };
+		293EFD2C64D1945327BD0761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D40B26118184F37B4DA9D4C /* Assets.xcassets */; };
+		2E2A7F7EB56730607440DF24 /* DiagnosticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47C09261FA7392F0EC56B0 /* DiagnosticsView.swift */; };
+		4816128A04F484D29055F20C /* MockDTCGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2101EB657BD9C75357850 /* MockDTCGenerator.swift */; };
+		5955108F15AFC45127929525 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E4F97535B4534C9F1BC32 /* TripDetailView.swift */; };
+		67FCE40A416D77CDB0DD9388 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C603B7A7A380B243444A375 /* DashboardView.swift */; };
+		6872F6B1F1EA3EDE91A2E3B7 /* ConnectionStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4829C10611517172B0621E /* ConnectionStatusBar.swift */; };
+		96B27122A24D66F84EB721EE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C85D2A9748C0B64B9592C /* SettingsView.swift */; };
+		988C7E33689315571D42CDC9 /* TripRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B811E3B0D364FB5F94019 /* TripRecord.swift */; };
+		9CF1CCF0181787C4A8E737D4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8762AD6CE2E7987444C42E /* Theme.swift */; };
+		B65752491A206B60D649EA62 /* MetricCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6450F67F861202E8BA49ABA /* MetricCardView.swift */; };
+		C525398618F9CCAAB691B2AB /* GlassModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4FF1AA8ECC40E0766C3078 /* GlassModifiers.swift */; };
+		CB6B87A3D3743CEDC32A36C9 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902C06D05DEAB72252577DE /* BLEManager.swift */; };
+		DE64AB8E681351632DA2A875 /* OBDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A403820D8F77927D7D1EB2 /* OBDViewModel.swift */; };
+		E08D26F1198E1073151C80E0 /* CarHeatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83339D77A79B32FDBD56CDA1 /* CarHeatMapView.swift */; };
+		EFEF407221F5C6A99E92E630 /* DTCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921552785075B52F2A736AB6 /* DTCModel.swift */; };
+		F850772E94F430BE96D15749 /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBBE0125C2D711A0FE2D669 /* MockDataManager.swift */; };
+		FDF7080F046EDC165C799FE2 /* PowerCANLiquidVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205058C42A1BD5B09148991 /* PowerCANLiquidVisionApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08A403820D8F77927D7D1EB2 /* OBDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBDViewModel.swift; sourceTree = "<group>"; };
+		0BBBE0125C2D711A0FE2D669 /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
+		0D8762AD6CE2E7987444C42E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		19D13E9BF153144B77F3AE21 /* ArcGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcGaugeView.swift; sourceTree = "<group>"; };
+		2205058C42A1BD5B09148991 /* PowerCANLiquidVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCANLiquidVisionApp.swift; sourceTree = "<group>"; };
+		2C4FF1AA8ECC40E0766C3078 /* GlassModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassModifiers.swift; sourceTree = "<group>"; };
+		3FAB8316C01F91CD9491D82D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		4CF17442416579EDF070F5CB /* PowerCANLiquidVision.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PowerCANLiquidVision.entitlements; sourceTree = "<group>"; };
+		4E5C85D2A9748C0B64B9592C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5C603B7A7A380B243444A375 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		69A2101EB657BD9C75357850 /* MockDTCGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDTCGenerator.swift; sourceTree = "<group>"; };
+		83339D77A79B32FDBD56CDA1 /* CarHeatMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarHeatMapView.swift; sourceTree = "<group>"; };
+		921552785075B52F2A736AB6 /* DTCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTCModel.swift; sourceTree = "<group>"; };
+		9902C06D05DEAB72252577DE /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		9D40B26118184F37B4DA9D4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A495C46DFD408969A746A613 /* PowerCANLiquidVision.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PowerCANLiquidVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4829C10611517172B0621E /* ConnectionStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusBar.swift; sourceTree = "<group>"; };
+		BC4E4F97535B4534C9F1BC32 /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
+		C6450F67F861202E8BA49ABA /* MetricCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCardView.swift; sourceTree = "<group>"; };
+		CA1FA4EC054D4DC7D0A559E3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		CF9B811E3B0D364FB5F94019 /* TripRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRecord.swift; sourceTree = "<group>"; };
+		FDF5C3B26024DF4A53F05494 /* OBDData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBDData.swift; sourceTree = "<group>"; };
+		FE4F2AAD7C0528697BFAEF63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF47C09261FA7392F0EC56B0 /* DiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsView.swift; sourceTree = "<group>"; };
+		FF9EB4D6FED7D5814E8A0D92 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0771D0CC8F010D8083C3B0E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9D40B26118184F37B4DA9D4C /* Assets.xcassets */,
+				4CF17442416579EDF070F5CB /* PowerCANLiquidVision.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		19F8F98840A5C7144CBF2B78 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				08A403820D8F77927D7D1EB2 /* OBDViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1ADCE43AE70D88C4BF712870 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				19D13E9BF153144B77F3AE21 /* ArcGaugeView.swift */,
+				83339D77A79B32FDBD56CDA1 /* CarHeatMapView.swift */,
+				AA4829C10611517172B0621E /* ConnectionStatusBar.swift */,
+				C6450F67F861202E8BA49ABA /* MetricCardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		258790E100B3DD175B945614 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4E5C85D2A9748C0B64B9592C /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		36FEDB7A613580040B9A2B09 /* PowerCANLiquidVision */ = {
+			isa = PBXGroup;
+			children = (
+				2205058C42A1BD5B09148991 /* PowerCANLiquidVisionApp.swift */,
+				97EAB22273903E53E6D0DE9C /* DesignSystem */,
+				D66884142F9E83F35B38A094 /* Models */,
+				0771D0CC8F010D8083C3B0E6 /* Resources */,
+				41E4FD2ACC669E571FA96DB7 /* Services */,
+				19F8F98840A5C7144CBF2B78 /* ViewModels */,
+				95F4323375C9E4D9DA78BE6E /* Views */,
+			);
+			path = PowerCANLiquidVision;
+			sourceTree = "<group>";
+		};
+		41E4FD2ACC669E571FA96DB7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9902C06D05DEAB72252577DE /* BLEManager.swift */,
+				CA1FA4EC054D4DC7D0A559E3 /* LocationManager.swift */,
+				0BBBE0125C2D711A0FE2D669 /* MockDataManager.swift */,
+				69A2101EB657BD9C75357850 /* MockDTCGenerator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4CF3A8BB032D334705F302E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A495C46DFD408969A746A613 /* PowerCANLiquidVision.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85A1ACB58F28A413C9FA0606 /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				FF47C09261FA7392F0EC56B0 /* DiagnosticsView.swift */,
+			);
+			path = Diagnostics;
+			sourceTree = "<group>";
+		};
+		8DD089409DF1CFDFBBE1157D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB8316C01F91CD9491D82D /* HistoryView.swift */,
+				BC4E4F97535B4534C9F1BC32 /* TripDetailView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		95F4323375C9E4D9DA78BE6E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE4F2AAD7C0528697BFAEF63 /* ContentView.swift */,
+				1ADCE43AE70D88C4BF712870 /* Components */,
+				E7CF4E83D8CC8077ED40E099 /* Dashboard */,
+				85A1ACB58F28A413C9FA0606 /* Diagnostics */,
+				8DD089409DF1CFDFBBE1157D /* History */,
+				258790E100B3DD175B945614 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		97EAB22273903E53E6D0DE9C /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				2C4FF1AA8ECC40E0766C3078 /* GlassModifiers.swift */,
+				0D8762AD6CE2E7987444C42E /* Theme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D66884142F9E83F35B38A094 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF9EB4D6FED7D5814E8A0D92 /* DataProvider.swift */,
+				921552785075B52F2A736AB6 /* DTCModel.swift */,
+				FDF5C3B26024DF4A53F05494 /* OBDData.swift */,
+				CF9B811E3B0D364FB5F94019 /* TripRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E7CF4E83D8CC8077ED40E099 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				5C603B7A7A380B243444A375 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		F2E9DE12DC03C398C9E1F933 = {
+			isa = PBXGroup;
+			children = (
+				36FEDB7A613580040B9A2B09 /* PowerCANLiquidVision */,
+				4CF3A8BB032D334705F302E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3186562A93E52DBC39FB468 /* PowerCANLiquidVision */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3412C29B9E7794C9FF09FAB /* Build configuration list for PBXNativeTarget "PowerCANLiquidVision" */;
+			buildPhases = (
+				409E7CB33E23D539FC7DFD30 /* Sources */,
+				D9FF532C1F3EA65A57387BD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PowerCANLiquidVision;
+			packageProductDependencies = (
+			);
+			productName = PowerCANLiquidVision;
+			productReference = A495C46DFD408969A746A613 /* PowerCANLiquidVision.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD68F2A656A59DEB5796F069 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E3186562A93E52DBC39FB468 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 84CE2FB0D7F6EDE4B4590E79 /* Build configuration list for PBXProject "PowerCANLiquidVision" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F2E9DE12DC03C398C9E1F933;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4CF3A8BB032D334705F302E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3186562A93E52DBC39FB468 /* PowerCANLiquidVision */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9FF532C1F3EA65A57387BD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293EFD2C64D1945327BD0761 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		409E7CB33E23D539FC7DFD30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C2BC35A313AA3B7FFCA2D8 /* ArcGaugeView.swift in Sources */,
+				CB6B87A3D3743CEDC32A36C9 /* BLEManager.swift in Sources */,
+				E08D26F1198E1073151C80E0 /* CarHeatMapView.swift in Sources */,
+				6872F6B1F1EA3EDE91A2E3B7 /* ConnectionStatusBar.swift in Sources */,
+				026C0B22ED2967D3557638BC /* ContentView.swift in Sources */,
+				EFEF407221F5C6A99E92E630 /* DTCModel.swift in Sources */,
+				67FCE40A416D77CDB0DD9388 /* DashboardView.swift in Sources */,
+				0BFAF7D7E9F16B3E8A1872CF /* DataProvider.swift in Sources */,
+				2E2A7F7EB56730607440DF24 /* DiagnosticsView.swift in Sources */,
+				C525398618F9CCAAB691B2AB /* GlassModifiers.swift in Sources */,
+				0190CCFA7AE6A0D42BF24297 /* HistoryView.swift in Sources */,
+				136F30A4C06B65F59B7105AB /* LocationManager.swift in Sources */,
+				B65752491A206B60D649EA62 /* MetricCardView.swift in Sources */,
+				4816128A04F484D29055F20C /* MockDTCGenerator.swift in Sources */,
+				F850772E94F430BE96D15749 /* MockDataManager.swift in Sources */,
+				02A9E956C0F8E33BC5E8C024 /* OBDData.swift in Sources */,
+				DE64AB8E681351632DA2A875 /* OBDViewModel.swift in Sources */,
+				FDF7080F046EDC165C799FE2 /* PowerCANLiquidVisionApp.swift in Sources */,
+				96B27122A24D66F84EB721EE /* SettingsView.swift in Sources */,
+				9CF1CCF0181787C4A8E737D4 /* Theme.swift in Sources */,
+				5955108F15AFC45127929525 /* TripDetailView.swift in Sources */,
+				988C7E33689315571D42CDC9 /* TripRecord.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		023A82CA9CDCE20DD8C0934C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PowerCANLiquidVision/Resources/PowerCANLiquidVision.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PowerCANLiquidVision/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "PowerCAN LV";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.powercan.liquidvision;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1311AFA5915D48F0C0CE882D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PowerCANLiquidVision/Resources/PowerCANLiquidVision.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PowerCANLiquidVision/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "PowerCAN LV";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.powercan.liquidvision;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		62E3CC7DF64BBEEA232EBCC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		707EBFC1DB8D83EC0E434711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84CE2FB0D7F6EDE4B4590E79 /* Build configuration list for PBXProject "PowerCANLiquidVision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707EBFC1DB8D83EC0E434711 /* Debug */,
+				62E3CC7DF64BBEEA232EBCC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B3412C29B9E7794C9FF09FAB /* Build configuration list for PBXNativeTarget "PowerCANLiquidVision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1311AFA5915D48F0C0CE882D /* Debug */,
+				023A82CA9CDCE20DD8C0934C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD68F2A656A59DEB5796F069 /* Project object */;
+}
