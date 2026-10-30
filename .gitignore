@@ -1,33 +1,23 @@
+# macOS
+.DS_Store
+
 # Xcode
 build/
 DerivedData/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
 xcuserdata/
-*.xccheckout
-*.moved-aside
-*.hmap
+*.xcworkspace/xcuserdata/
 *.ipa
-*.dSYM.zip
 *.dSYM
+*.dSYM.zip
+*.hmap
+*.moved-aside
 
 # Swift Package Manager
 .build/
-Packages/
+.swiftpm/
 
-# CocoaPods
-Pods/
-
-# macOS
-.DS_Store
+# Editor
+.idea/
+.vscode/
+*.iml
 *.swp
-*~.nib
-
-# Xcode Workspace
-*.xcworkspace/xcuserdata/

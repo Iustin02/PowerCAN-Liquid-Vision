@@ -1,144 +1,105 @@
 # PowerCAN Liquid Vision
 
-Aplicatie iOS de diagnosticare OBD-II cu design Liquid Glass, compatibila cu **Mister Diy PowerCAN ESP32**.
+**Aplicație mobilă de diagnoză OBD-II** pentru un adaptor ESP32, cu interfață „Liquid Glass”. Afișează în timp real turația, viteza, temperatura motorului și consumul, înregistrează traseele pe hartă și citește codurile de eroare (DTC).
 
-## Cerinte
+| | |
+|---|---|
+| **Platforme** | iOS 17+ (SwiftUI, aplicația de referință) · Android (port Flutter) |
+| **Hardware** | adaptor ESP32 cu bridge ELM327 peste Wi-Fi (TCP) |
+| **Protocol** | OBD-II mod 01 (date live), comenzi ELM327 AT |
+| **Arhitectură** | MVVM + protocol `DataProvider` (simulare / live) |
+| **Stare** | prototip funcțional; mod simulare complet, mod live testat pe bridge Wi-Fi |
 
-| Cerinta | Valoare |
-|---------|---------|
-| Xcode | 15.0+ |
-| Swift | 5.9+ |
-| iOS Deployment Target | 17.0 |
-| Dispozitiv tinta | iPhone 12 Pro Max |
-| Frameworks | SwiftUI, SwiftData, CoreBluetooth, MapKit, CoreLocation |
+> **EN.** A mobile OBD-II dashboard for an ESP32-based ELM327 Wi-Fi bridge. It shows live engine metrics (RPM, speed, coolant temperature, fuel trims, MAF, estimated consumption), records GPS trips with speed-coloured routes and decodes diagnostic trouble codes. SwiftUI app for iOS 17 plus a Flutter port for Android. A built-in simulation engine makes it usable without a car.
 
-## Setup Xcode — Pas cu Pas
+---
 
-### 1. Creeaza Proiectul
+## Funcționalități
 
-1. Deschide **Xcode** → **File** → **New** → **Project**
-2. Selecteaza **App** sub iOS → **Next**
-3. Completeaza:
-   - Product Name: `PowerCANLiquidVision`
-   - Team: (contul tau de developer)
-   - Organization Identifier: `com.powercan`
-   - Interface: **SwiftUI**
-   - Storage: **SwiftData**
-   - Language: **Swift**
-4. Apasa **Next** → alege locatia → **Create**
+| Ecran | Ce face |
+|---|---|
+| **Dashboard** | gauge-uri RPM și viteză, hartă termică a mașinii (încărcare motor), carduri pentru temperatură, fuel trim și consum, pornire/oprire traseu |
+| **Diagnostics** | scanare și ștergere DTC, grupare pe categorii (P/C/B/U) și severitate |
+| **History** | lista traseelor cu previzualizare pe hartă; detaliu cu ruta colorată după viteză, distanță, viteză maximă și medie |
+| **Settings** | comutare *Simulated Data* / *Live OBD (Wi-Fi)*, configurarea endpoint-ului bridge-ului (host și port), informații despre protocol |
 
-### 2. Seteaza Deployment Target
+## Arhitectură
 
-1. Click pe proiect in Project Navigator (iconita albastra de sus)
-2. Tab-ul **General** → **Minimum Deployments** → seteaza **iOS 17.0**
-
-### 3. Adauga Fisierele Sursa
-
-1. In Xcode: **File** → **Add Files to "PowerCANLiquidVision"**
-2. Selecteaza tot continutul din folderul `PowerCANLiquidVision/`:
-   - `Models/` (OBDData.swift, TripRecord.swift, DataProvider.swift)
-   - `Services/` (MockDataManager.swift, BLEManager.swift, LocationManager.swift)
-   - `ViewModels/` (OBDViewModel.swift)
-   - `DesignSystem/` (Theme.swift, GlassModifiers.swift)
-   - `Views/` (toate sub-folderele)
-   - `PowerCANLiquidVisionApp.swift`
-3. Bifeaza **"Copy items if needed"** si **"Create groups"**
-4. Sterge fisierele `ContentView.swift` si App-ul generat automat de Xcode (cele default)
-
-### 4. Configureaza Info.plist
-
-Mergi in tab-ul **Info** al target-ului si adauga manual aceste chei:
-
-| Cheie | Valoare |
-|-------|---------|
-| `NSBluetoothAlwaysUsageDescription` | PowerCAN Liquid Vision necesita acces Bluetooth pentru a comunica cu adaptorul OBD-II ESP32 PowerCAN si a citi datele de diagnosticare ale vehiculului in timp real. |
-| `NSLocationAlwaysAndWhenInUseUsageDescription` | PowerCAN Liquid Vision foloseste locatia pentru a inregistra traseele tale, a calcula distanta parcursa si a afisa ruta pe harta cu date de viteza colorate dinamic. |
-| `NSLocationWhenInUseUsageDescription` | Accesul la locatie este necesar pentru inregistrarea traseelor si afisarea pozitiei pe harta. |
-
-Alternativ, inlocuieste fisierul Info.plist cu cel din `Resources/Info.plist`.
-
-### 5. Activeaza Background Modes
-
-1. Click pe target-ul proiectului
-2. Tab **Signing & Capabilities**
-3. Apasa **"+ Capability"**
-4. Cauta si adauga **Background Modes**
-5. Bifeaza:
-   - [x] **Uses Bluetooth LE accessories** (pentru comunicare continua cu ESP32)
-   - [x] **Location updates** (pentru inregistrarea rutelor in fundal)
-
-### 6. Ruleaza pe Simulator
-
-1. Selecteaza **iPhone 15 Pro Max** (sau iPhone 12 Pro Max) din dropdown-ul de dispozitive
-2. Apasa **Cmd + R**
-3. Aplicatia porneste automat in **Simulation Mode** cu date pulsante
-
-### 7. Instaleaza pe Telefon
-
-1. Conecteaza iPhone-ul prin cablu USB
-2. Selecteaza dispozitivul din lista Xcode
-3. Asigura-te ca ai setat **Signing** cu un Apple ID valid
-4. Apasa **Cmd + R**
-5. Pe telefon: **Settings** → **General** → **VPN & Device Management** → Trust developer certificate
-
-## Arhitectura
-
-```
-MVVM + DataProvider Protocol
-│
-├── DataProvider (protocol)
-│   ├── MockDataManager  → date simulate sinusoidale
-│   └── BLEManager       → Core Bluetooth + ELM327
-│
-├── OBDViewModel (@MainActor, ObservableObject)
-│   ├── Published obdData, connectionState
-│   ├── Trip recording cu SwiftData
-│   └── Switch intre simulated/live
-│
-└── Views
-    ├── DashboardView    → gauge-uri + heat map masina
-    ├── HistoryView      → trips cu harti MapKit colorate
-    └── SettingsView     → toggle simulare/live + info
+```mermaid
+flowchart LR
+    subgraph Car["Vehicul"]
+        ECU["ECU<br/>OBD-II"]
+    end
+    subgraph Bridge["Adaptor"]
+        ESP["ESP32<br/>ELM327 bridge<br/>AP Wi-Fi 192.168.4.1:35000"]
+    end
+    subgraph App["Aplicație (iOS / Flutter)"]
+        P{{"DataProvider"}}
+        W["WiFiOBDManager<br/>TCP + parser PID"]
+        M["MockDataManager<br/>simulare 10 Hz"]
+        VM["OBDViewModel"]
+        UI["Views<br/>Dashboard · Diagnostics · History · Settings"]
+        DB[("SwiftData / shared_preferences<br/>trasee")]
+        GPS["LocationManager"]
+    end
+    ECU <-->|CAN| ESP <-->|TCP / ELM327| W
+    W --> P
+    M --> P
+    P --> VM --> UI
+    GPS --> VM --> DB
 ```
 
-## Mod Simulare (Mock Engine)
+Detalii: [`docs/architecture.md`](docs/architecture.md) · protocolul și formulele: [`docs/obd-protocol.md`](docs/obd-protocol.md) · design: [`docs/design-system.md`](docs/design-system.md).
 
-`MockDataManager` genereaza date realiste la fiecare **0.1 secunde**:
-
-- **RPM** (PID 0C): Oscilatie sinusoidala 800–5500 RPM cu micro-noise
-- **Viteza** (PID 0D): Accelerare graduala 0–130+ km/h
-- **Temp. Motor** (PID 05): Warmup de la 20°C la ~92°C in 60 secunde
-- **Fuel Trim**: Oscilatie naturala in jurul zero-ului
-- **Engine Load, Throttle, MAF**: Date corelate cu RPM si viteza
-
-Switch-ul **Simulated Data / Live OBD** se gaseste in tab-ul **Settings**.
-
-## Formule OBD-II
-
-| Metric | PID | Formula |
-|--------|-----|---------|
-| RPM | `010C` | `((256 * A) + B) / 4` |
-| Speed | `010D` | `A` |
-| Coolant Temp | `0105` | `A - 40` |
-| Fuel Trim | `0106`/`0107` | `(A - 128) * (100 / 128)` |
-
-## Initializare ELM327
-
-Secventa de handshake trimisa la conectare:
+## Structura depozitului
 
 ```
-ATZ    → Reset adapter
-ATE0   → Echo off
-ATL1   → Linefeeds on
-ATSP0  → Auto-detect protocol
+PowerCAN-Liquid-Vision/
+├── apps/
+│   ├── ios/                 ← aplicația de referință: SwiftUI + SwiftData (XcodeGen)
+│   └── flutter/             ← portul Android (Flutter + Provider)
+├── docs/                    ← arhitectură, protocol OBD-II, design system, setup
+├── dev-pack/                ← metoda de lucru cu asistenți AI: context, convenții, prompturi
+├── AGENTS.md / CLAUDE.md    ← punctul de intrare pentru asistenți AI
+├── CHANGELOG.md
+└── LICENSE
 ```
 
-## Design System — Liquid Glass
+## Pornire rapidă
 
-- Fundal: OLED Black (`#0A0A0A`)
-- Carduri: `.ultraThinMaterial` + `background.card` semitransparent
-- Borduri: `AngularGradient` cu glow neon
-- Tier 1 (Speed/RPM): **38pt Bold SF Pro Rounded** `.monospacedDigit()`
-- Tier 2 (Coolant/Fuel): **26pt Semibold**
-- Heat Map: Cyan → Green → Orange → Red in functie de load
-- Animatii: `.spring(response: 0.4)` + `.contentTransition(.numericText())`
+**iOS** (Xcode 15+, macOS):
+
+```bash
+brew install xcodegen
+cd apps/ios
+xcodegen generate
+open PowerCANLiquidVision.xcodeproj    # apoi Cmd+R pe un simulator iPhone
+```
+
+**Android** (Flutter stabil cu Dart 3.11+, Android SDK):
+
+```bash
+cd apps/flutter
+flutter pub get
+flutter run
+```
+
+Ambele aplicații pornesc în **modul simulare**, deci nu e nevoie de mașină sau adaptor. Pentru date reale: conectează telefonul la rețeaua Wi-Fi a ESP32, apoi alege *Settings → Live OBD (Wi-Fi)*. Endpoint-ul implicit este `192.168.4.1:35000`.
+
+Ghiduri complete: [`docs/setup-ios.md`](docs/setup-ios.md) · [`docs/setup-flutter.md`](docs/setup-flutter.md).
+
+## Lucrul cu asistenți AI (dev-pack)
+
+Proiectul e pregătit pentru dezvoltare asistată de AI (Claude Code, Codex, Cursor, Copilot). [`AGENTS.md`](AGENTS.md) conține regulile de bază. [`dev-pack/`](dev-pack/) conține contextul proiectului, convențiile Swift și Dart, regula de **paritate iOS ↔ Flutter** și prompturi pentru sarcinile frecvente: un PID nou, o funcționalitate nouă pe ambele platforme, o componentă UI, un release. Fluxul recomandat este descris în [`dev-pack/README.md`](dev-pack/README.md).
+
+## Roadmap
+
+- [ ] Citirea DTC reală în modul live (OBD mod `03`) și ștergerea lor (mod `04`); acum scanarea funcționează doar în simulare
+- [ ] Teste unitare pentru parserul PID (iOS și Flutter), pe răspunsuri ELM327 înregistrate
+- [ ] Exportul traseelor (GPX / CSV)
+- [ ] Transport BLE opțional, alături de Wi-Fi (implementarea inițială e în tag-ul `v1.0.0-ble`)
+- [ ] Documentarea firmware-ului ESP32 (AP, port, framing)
+
+## Licență
+
+[MIT](LICENSE) © 2026 Iustin Iulian Dodiță. Nu este afiliat cu producătorii de vehicule sau de adaptoare menționați. Folosirea în trafic se face pe propria răspundere: nu manipula aplicația în timp ce conduci.
